@@ -3,7 +3,7 @@ import Counter from "./Counter";
 export default function App() {
   return (
     <div>
-      <h1>Compound Component Pattern</h1>
+      {/* <h1>Compound Component Pattern</h1>
       <Counter
         iconIncrease="+"
         iconDecrease="-"
@@ -11,7 +11,21 @@ export default function App() {
         hideLabel={false}
         hideIncrease={false}
         hideDecrease={false}
-      />
+      /> */}
+
+      <Counter>
+        <Counter.Label>My super flexible counter </Counter.Label>
+        <Counter.Decrease icon="-" />
+        <Counter.Count />
+        <Counter.Increase icon="+" />
+      </Counter>
+      <div>
+        <Counter>
+          <Counter.Decrease icon="🔽" />
+          <Counter.Count />
+          <Counter.Increase icon="🔼" />
+        </Counter>
+      </div>
     </div>
   );
 }
